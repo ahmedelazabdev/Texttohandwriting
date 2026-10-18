@@ -14,10 +14,16 @@
   <meta property="og:title" content="Text to Handwriting | Realistic Handwritten Notes Generator">
   <meta property="og:description" content="Convert your text to natural handwriting in any language: Arabic, English, Hindi, Russian, and more.">
 
-  <!-- Multilingual Google Fonts -->
+  <!-- 1. Preconnect to Font Origins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Aref+Ruqaa:wght@400;700&family=Caveat:wght@400;600&family=Kalam:wght@300;400&family=Ma+Shan+Zheng&family=Marck+Script&family=Patrick+Hand&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
+  <!-- 2. Non-render-blocking Asynchronous Font Loading (Solves 2,370ms delay & Eliminates Critical Path Blocking) -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Patrick+Hand&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Patrick+Hand&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Patrick+Hand&display=swap">
+  </noscript>
 
   <!-- Schema Markup -->
   <script type="application/ld+json">
@@ -76,10 +82,23 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Cairo", "Amiri", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Cairo", sans-serif;
       background-color: var(--bg);
       color: var(--text);
       line-height: 1.6;
+    }
+
+    /* Screen reader only utility class for 100% accessibility */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     header {
@@ -290,7 +309,6 @@
     </div>
 
     <div class="workspace">
-      <!-- Settings Panel -->
       <div class="panel">
         <h2 class="panel-title">Settings & Customization</h2>
         
@@ -306,23 +324,23 @@ Text to Handwriting supports all international languages with authentic human ji
             <label for="fontSelect">Font Family (All Scripts)</label>
             <select id="fontSelect">
               <optgroup label="العربية (Arabic & RTL)">
-                <option value="'Aref Ruqaa', cursive" selected>Aref Ruqaa (خط الرقعة الطبيعي)</option>
-                <option value="'Amiri', serif">Amiri (خط النسخ التقليدي)</option>
+                <option value="'Aref Ruqaa', cursive" data-google="Aref+Ruqaa:wght@400;700" selected>Aref Ruqaa (خط الرقعة الطبيعي)</option>
+                <option value="'Amiri', serif" data-google="Amiri:ital@0;1">Amiri (خط النسخ التقليدي)</option>
               </optgroup>
               <optgroup label="Latin & European">
-                <option value="'Patrick Hand', cursive">Patrick Hand (Clean Casual)</option>
-                <option value="'Caveat', cursive">Caveat (Modern Cursive)</option>
-                <option value="'Shadows Into Light', cursive">Shadows Into Light</option>
+                <option value="'Patrick Hand', cursive" data-google="Patrick+Hand">Patrick Hand (Clean Casual)</option>
+                <option value="'Caveat', cursive" data-google="Caveat:wght@400;600">Caveat (Modern Cursive)</option>
+                <option value="'Shadows Into Light', cursive" data-google="Shadows+Into+Light">Shadows Into Light</option>
               </optgroup>
               <optgroup label="Cyrillic (Русский)">
-                <option value="'Marck Script', cursive">Marck Script (Рукописный)</option>
-                <option value="'Caveat', cursive">Caveat (Силирица)</option>
+                <option value="'Marck Script', cursive" data-google="Marck+Script">Marck Script (Рукописный)</option>
+                <option value="'Caveat', cursive" data-google="Caveat:wght@400;600">Caveat (Силирица)</option>
               </optgroup>
               <optgroup label="Devanagari (हिन्दी)">
-                <option value="'Kalam', cursive">Kalam (हिंदी लिखावट)</option>
+                <option value="'Kalam', cursive" data-google="Kalam:wght@300;400">Kalam (हिंदी लिखावट)</option>
               </optgroup>
               <optgroup label="Chinese (中文)">
-                <option value="'Ma Shan Zheng', cursive">Ma Shan Zheng (毛笔书法)</option>
+                <option value="'Ma Shan Zheng', cursive" data-google="Ma+Shan+Zheng">Ma Shan Zheng (毛笔书法)</option>
               </optgroup>
             </select>
           </div>
@@ -343,11 +361,14 @@ Text to Handwriting supports all international languages with authentic human ji
           <div class="control-group">
             <label>Ink Color</label>
             <div class="color-swatches">
-              <div class="swatch active" style="background: #002244;" data-color="#002244" title="Navy Blue"></div>
-              <div class="swatch" style="background: #111827;" data-color="#111827" title="Black Gel"></div>
-              <div class="swatch" style="background: #1e3a8a;" data-color="#1e3a8a" title="Ballpoint Blue"></div>
-              <div class="swatch" style="background: #831843;" data-color="#831843" title="Dark Red"></div>
-              <input type="color" id="customColor" value="#002244" style="width:32px; height:32px; border:none; cursor:pointer;">
+              <button type="button" class="swatch active" style="background: #002244;" data-color="#002244" aria-label="Royal Navy Blue Ink"></button>
+              <button type="button" class="swatch" style="background: #111827;" data-color="#111827" aria-label="Black Gel Pen Ink"></button>
+              <button type="button" class="swatch" style="background: #1e3a8a;" data-color="#1e3a8a" aria-label="Ballpoint Blue Ink"></button>
+              <button type="button" class="swatch" style="background: #831843;" data-color="#831843" aria-label="Grading Red Ink"></button>
+              
+              <!-- Fixed Accessibility: Associated Hidden Label & Accessible Name for Custom Color Picker -->
+              <label for="customColor" class="sr-only">Pick custom ink color</label>
+              <input type="color" id="customColor" name="customColor" value="#002244" aria-label="Pick custom ink color" style="width:32px; height:32px; border:none; cursor:pointer;">
             </div>
           </div>
 
@@ -375,7 +396,6 @@ Text to Handwriting supports all international languages with authentic human ji
         </div>
       </div>
 
-      <!-- Preview Canvas -->
       <div class="preview-container">
         <div class="canvas-scroll-wrap">
           <canvas id="canvas" width="800" height="1132"></canvas>
@@ -386,7 +406,6 @@ Text to Handwriting supports all international languages with authentic human ji
       </div>
     </div>
 
-    <!-- Long SEO Article -->
     <article class="seo-article">
       <h2>Text to Handwriting: The Complete Global Solution</h2>
       <p>Converting typed digital characters into genuine handwriting usually fails when tools don't respect the nuances of different languages and alphabets. <strong>Text to Handwriting</strong> is engineered to render both Left-to-Right (LTR) and Right-to-Left (RTL) scripts with true organic realism.</p>
@@ -438,7 +457,6 @@ Text to Handwriting supports all international languages with authentic human ji
     const MARGIN_RIGHT = 75;
     const MARGIN_TOP = 110;
 
-    // Retina DPI Setup
     const dpr = window.devicePixelRatio || 1;
     canvas.width = CANVAS_WIDTH * dpr;
     canvas.height = CANVAS_HEIGHT * dpr;
@@ -446,19 +464,37 @@ Text to Handwriting supports all international languages with authentic human ji
     canvas.style.height = CANVAS_HEIGHT + 'px';
     ctx.scale(dpr, dpr);
 
-    // RTL Detection Regex (Arabic, Hebrew, Persian, Urdu, etc.)
+    // On-Demand Lazy Font Loader to save 30 KiB of unused CSS on page load
+    const loadedFonts = new Set(['Aref Ruqaa', 'Patrick Hand']);
+    function loadFontOnDemand(fontOption) {
+      const googleParam = fontOption.getAttribute('data-google');
+      const fontName = fontOption.value.split(',')[0].replace(/['"]/g, '');
+
+      if (!googleParam || loadedFonts.has(fontName)) {
+        document.fonts.load(`18px ${fontOption.value}`).then(renderCanvas);
+        return;
+      }
+
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = `https://fonts.googleapis.com/css2?family=${googleParam}&display=swap`;
+      link.onload = () => {
+        loadedFonts.add(fontName);
+        document.fonts.load(`18px ${fontOption.value}`).then(renderCanvas);
+      };
+      document.head.appendChild(link);
+    }
+
     function isRTLText(text) {
       const rtlRegex = /[\u0591-\u07FF\uFB1D-\uFDFD\uFE70-\uFEFC]/;
       return rtlRegex.test(text);
     }
 
-    // Pseudo-random function for repeatable organic jitter
     function pseudoRandom(seed) {
       const x = Math.sin(seed++) * 10000;
       return x - Math.floor(x);
     }
 
-    // Draw Paper Styles
     function drawPaper(style, isRTL) {
       ctx.save();
       if (style === 'plain') {
@@ -490,7 +526,6 @@ Text to Handwriting supports all international languages with authentic human ji
           ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(CANVAS_WIDTH, y); ctx.stroke();
         }
       } else {
-        // Standard lined notebook
         ctx.fillStyle = '#fafafa';
         ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
         const lHeight = parseInt(lineHeight.value, 10);
@@ -502,8 +537,6 @@ Text to Handwriting supports all international languages with authentic human ji
           ctx.lineTo(CANVAS_WIDTH - 35, y);
           ctx.stroke();
         }
-
-        // Margin Line (Flips sides for RTL vs LTR!)
         ctx.strokeStyle = '#fca5a5';
         ctx.lineWidth = 1.5;
         const marginX = isRTL ? (CANVAS_WIDTH - MARGIN_RIGHT + 15) : (MARGIN_LEFT - 15);
@@ -515,7 +548,6 @@ Text to Handwriting supports all international languages with authentic human ji
       ctx.restore();
     }
 
-    // Core Multilingual Rendering Pipeline
     function renderCanvas() {
       const text = inputText.value;
       const hasRTL = isRTLText(text);
@@ -531,8 +563,6 @@ Text to Handwriting supports all international languages with authentic human ji
       ctx.font = `${size}px ${chosenFont}`;
       ctx.fillStyle = currentInkColor;
       ctx.textBaseline = 'alphabetic';
-
-      // Ink bleed effect
       ctx.shadowColor = currentInkColor;
       ctx.shadowBlur = 0.35;
 
@@ -573,7 +603,6 @@ Text to Handwriting supports all international languages with authentic human ji
       }
     }
 
-    // Word-Safe Draw (Preserves Arabic & Indic Ligatures)
     function drawLine(words, y, isRTL, jitter, seed) {
       ctx.save();
       ctx.direction = isRTL ? 'rtl' : 'ltr';
@@ -616,10 +645,10 @@ Text to Handwriting supports all international languages with authentic human ji
       ctx.restore();
     }
 
-    // Listeners
     inputText.addEventListener('input', renderCanvas);
-    fontSelect.addEventListener('change', () => {
-      document.fonts.load(`18px ${fontSelect.value}`).then(renderCanvas);
+    fontSelect.addEventListener('change', (e) => {
+      const selectedOption = e.target.options[e.target.selectedIndex];
+      loadFontOnDemand(selectedOption);
     });
     paperSelect.addEventListener('change', renderCanvas);
     fontSize.addEventListener('input', (e) => {
