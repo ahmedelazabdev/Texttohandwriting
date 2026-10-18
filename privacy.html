@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy | Text to Handwriting Pro</title>
-  <meta name="description" content="Privacy Policy for Text to Handwriting Pro. Discover how our client-side architecture safeguards your data by executing entirely in your browser without server uploads.">
+  <title>Text to Handwriting | Privacy Policy</title>
+  <meta name="description" content="Privacy Policy for Text to Handwriting. We respect your confidentiality with 100% in-browser, client-side rendering.">
   <link rel="canonical" href="https://yourdomain.com/privacy.html">
 
   <style>
@@ -19,15 +19,12 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Cairo", sans-serif;
       background-color: var(--bg);
       color: var(--text);
       line-height: 1.6;
     }
-    header {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-    }
+    header { background: var(--surface); border-bottom: 1px solid var(--border); }
     .nav-container {
       max-width: 1280px;
       margin: 0 auto;
@@ -36,25 +33,11 @@
       justify-content: space-between;
       align-items: center;
     }
-    .logo {
-      font-weight: 800;
-      font-size: 1.35rem;
-      color: var(--primary);
-      text-decoration: none;
-    }
-    nav a {
-      margin-left: 1.5rem;
-      text-decoration: none;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
+    .logo { font-weight: 800; font-size: 1.35rem; color: var(--primary); text-decoration: none; }
+    nav a { margin-left: 1.5rem; text-decoration: none; color: var(--text-muted); font-weight: 500; }
     nav a.active, nav a:hover { color: var(--primary); }
 
-    .content-container {
-      max-width: 860px;
-      margin: 3rem auto;
-      padding: 0 1.5rem;
-    }
+    .content-container { max-width: 860px; margin: 3rem auto; padding: 0 1.5rem; }
     .card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -63,7 +46,7 @@
       box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
     }
     h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
-    .updated-date { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .date { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
     h2 { font-size: 1.4rem; margin-top: 1.75rem; margin-bottom: 0.5rem; }
     p { margin-bottom: 1.25rem; color: #334155; }
     ul { margin-left: 1.5rem; margin-bottom: 1.5rem; color: #334155; }
@@ -82,7 +65,7 @@
 
   <header>
     <div class="nav-container">
-      <a href="index.html" class="logo">✍️ HandwrittenPro</a>
+      <a href="index.html" class="logo">✍️ Text to Handwriting</a>
       <nav>
         <a href="index.html">Tool</a>
         <a href="about.html">About</a>
@@ -94,32 +77,28 @@
   <main class="content-container">
     <div class="card">
       <h1>Privacy Policy</h1>
-      <p class="updated-date">Last updated: January 2025</p>
+      <p class="date">Effective Date: January 2025</p>
 
-      <h2>1. The Foundation of Our Privacy Architecture</h2>
-      <p>Text to Handwriting Pro is designed around a simple principle: <strong>What you write in your browser stays in your browser.</strong></p>
-      <p>Unlike typical web applications that upload input data to an external API or cloud database to process outputs, our software is written entirely in client-side HTML5, CSS3, and JavaScript. All font conversions, baseline jitter routines, and canvas image exports occur locally within your computer's or device's memory.</p>
+      <h2>1. Complete On-Device Privacy</h2>
+      <p>At <strong>Text to Handwriting</strong>, your personal privacy is guaranteed by design. The software is built entirely with client-side JavaScript and the HTML5 Canvas API. All text conversion and image generation processes happen locally inside your browser memory.</p>
 
-      <h2>2. What Data We Collect</h2>
+      <h2>2. Data Collection and Retention</h2>
       <ul>
-        <li><strong>User-Entered Text:</strong> We never log, store, or transmit your typed or pasted text. It remains in client memory and is wiped the moment you refresh or close the tab.</li>
-        <li><strong>Generated Images:</strong> Any rendered PNG or PDF is compiled directly on your device via the Canvas API. No copies are sent to or stored on our servers.</li>
-        <li><strong>Local Storage:</strong> We do not track your user profile or sell browsing information to third-party ad networks.</li>
+        <li><strong>User-Input Text:</strong> We do not log, inspect, transmit, or store the text you write in any language.</li>
+        <li><strong>Generated Files:</strong> All exported PNG images and PDFs are created locally on your device.</li>
+        <li><strong>No Account Required:</strong> You are never asked to register, sign in, or provide personal identifiable information.</li>
       </ul>
 
-      <h2>3. Third-Party Web Assets</h2>
-      <p>To provide high-quality handwriting fonts, our application requests open-source font glyphs via Google Fonts CDN. These fonts are loaded directly from Google's content delivery networks. For more information regarding their practices, consult Google's official privacy documentation.</p>
+      <h2>3. Fonts & Third-Party Assets</h2>
+      <p>Our multilingual fonts are loaded directly from the Google Fonts CDN to ensure fast loading speeds and reliable rendering across all operating systems.</p>
 
       <h2>4. GDPR & CCPA Compliance</h2>
-      <p>Because we do not store, process, or sell any Personally Identifiable Information (PII), our software inherently complies with the core principles of both the General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA).</p>
-
-      <h2>5. Questions and Concerns</h2>
-      <p>For questions or feedback regarding this policy or the software's architecture, contact us at <a href="mailto:privacy@yourdomain.com" style="color: var(--primary);">privacy@yourdomain.com</a>.</p>
+      <p>Because no personal data is collected or transferred to servers, Text to Handwriting fully complies with global privacy standards, including the GDPR and CCPA.</p>
     </div>
   </main>
 
   <footer>
-    <p>&copy; <span id="year"></span> Text to Handwriting Pro. All rights reserved.</p>
+    <p>&copy; <span id="year"></span> Text to Handwriting. All rights reserved.</p>
   </footer>
 
   <script>
