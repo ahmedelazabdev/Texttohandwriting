@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us | Text to Handwriting Converter Pro</title>
-  <meta name="description" content="Learn about Text to Handwriting Pro, our algorithmic approach to realistic handwriting simulation, and our commitment to client-side zero-knowledge privacy.">
+  <title>Text to Handwriting | About Us</title>
+  <meta name="description" content="About Text to Handwriting - A modern, multilingual tool converting digital typography into authentic handwriting for all global languages.">
   <link rel="canonical" href="https://yourdomain.com/about.html">
 
   <style>
@@ -19,15 +19,12 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Cairo", sans-serif;
       background-color: var(--bg);
       color: var(--text);
       line-height: 1.6;
     }
-    header {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-    }
+    header { background: var(--surface); border-bottom: 1px solid var(--border); }
     .nav-container {
       max-width: 1280px;
       margin: 0 auto;
@@ -36,25 +33,11 @@
       justify-content: space-between;
       align-items: center;
     }
-    .logo {
-      font-weight: 800;
-      font-size: 1.35rem;
-      color: var(--primary);
-      text-decoration: none;
-    }
-    nav a {
-      margin-left: 1.5rem;
-      text-decoration: none;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
+    .logo { font-weight: 800; font-size: 1.35rem; color: var(--primary); text-decoration: none; }
+    nav a { margin-left: 1.5rem; text-decoration: none; color: var(--text-muted); font-weight: 500; }
     nav a.active, nav a:hover { color: var(--primary); }
 
-    .content-container {
-      max-width: 860px;
-      margin: 3rem auto;
-      padding: 0 1.5rem;
-    }
+    .content-container { max-width: 860px; margin: 3rem auto; padding: 0 1.5rem; }
     .card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -62,8 +45,8 @@
       padding: 3rem;
       box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
     }
-    h1 { font-size: 2.3rem; margin-bottom: 1rem; }
-    h2 { font-size: 1.5rem; margin-top: 2rem; margin-bottom: 0.75rem; }
+    h1 { font-size: 2.2rem; margin-bottom: 1rem; }
+    h2 { font-size: 1.45rem; margin-top: 1.75rem; margin-bottom: 0.75rem; }
     p { margin-bottom: 1.25rem; color: #334155; }
     ul { margin-left: 1.5rem; margin-bottom: 1.5rem; color: #334155; }
     li { margin-bottom: 0.5rem; }
@@ -81,7 +64,7 @@
 
   <header>
     <div class="nav-container">
-      <a href="index.html" class="logo">✍️ HandwrittenPro</a>
+      <a href="index.html" class="logo">✍️ Text to Handwriting</a>
       <nav>
         <a href="index.html">Tool</a>
         <a href="about.html" class="active">About</a>
@@ -92,30 +75,27 @@
 
   <main class="content-container">
     <div class="card">
-      <h1>About Text to Handwriting Pro</h1>
-      <p>Text to Handwriting Pro was developed to restore human warmth and physical presence to digital text. While modern keyboards make producing text effortless, documents often end up visually impersonal and sterile.</p>
+      <h1>About Text to Handwriting</h1>
+      <p><strong>Text to Handwriting</strong> was created to deliver authentic, human-like handwritten output from typed digital text across all world languages.</p>
 
-      <h2>Our Core Mission</h2>
-      <p>We build accessible, high-performance web utilities that empower students, teachers, designers, and small business owners to generate realistic handwritten physical artifacts without requiring specialized graphics tablets or expensive subscription design software.</p>
-
-      <h2>Algorithmic Realism: How It Works</h2>
-      <p>Unlike conventional web generators that render text in rigid horizontal straight lines, our tool incorporates algorithmic imperfections that mimic the biological rhythm of handwriting:</p>
+      <h2>Universal Multilingual Compatibility</h2>
+      <p>Most existing text converters are limited to basic Latin characters, breaking completely when applied to non-Western alphabets. Text to Handwriting was designed from the ground up to support:</p>
       <ul>
-        <li><strong>Dynamic Micro-Perturbation:</strong> Slight random height deviations on individual characters break computer-rendered symmetry.</li>
-        <li><strong>Rotational Micro-Drift:</strong> Rotational variability imitates how human wrists naturally swivel across wide writing pads.</li>
-        <li><strong>Capillary Ink Bleed:</strong> Subtle edge diffusion mimics real ink penetrating fibrous notebook paper.</li>
+        <li><strong>Right-to-Left (RTL) Scripts:</strong> Arabic, Persian, Urdu, and Hebrew with preserved cursive ligatures and automatic right margin orientation.</li>
+        <li><strong>Devanagari:</strong> Full complex character support for Hindi and related Indic writing systems.</li>
+        <li><strong>Cyrillic & East Asian:</strong> Natural cursive scripts for Russian, Ukrainian, and Chinese characters.</li>
       </ul>
 
-      <h2>Zero-Tracking Privacy Guarantee</h2>
-      <p>Your writing remains exclusively yours. Unlike competing platforms that transmit your text strings to centralized servers for analysis or processing, Text to Handwriting Pro executes 100% of its logic directly in your browser using the native HTML5 Canvas API. No text, logs, or generated documents are ever uploaded to a remote server.</p>
+      <h2>Why Ligature-Safe Technology Matters</h2>
+      <p>In languages like Arabic, characters must connect naturally into cohesive words. Simple character-by-character jitter algorithms break these connections. Our engine calculates word-boundary transformations, applying organic fluctuations without tearing letters apart.</p>
 
-      <h2>Contact & Technical Support</h2>
-      <p>Have suggestions for additional handwriting fonts, paper textures, or custom export formats? Contact our technical team at <a href="mailto:support@yourdomain.com" style="color: var(--primary);">support@yourdomain.com</a>.</p>
+      <h2>Client-Side Performance & Privacy</h2>
+      <p>Our tool works entirely in your web browser. No text is transmitted, analyzed, or stored on remote servers, providing total data confidentiality for students, researchers, and professionals.</p>
     </div>
   </main>
 
   <footer>
-    <p>&copy; <span id="year"></span> Text to Handwriting Pro. All rights reserved.</p>
+    <p>&copy; <span id="year"></span> Text to Handwriting. All rights reserved.</p>
   </footer>
 
   <script>
