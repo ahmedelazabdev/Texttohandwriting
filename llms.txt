@@ -1,0 +1,34 @@
+# Text to Handwriting
+
+> Text to Handwriting is an advanced, privacy-first client-side web application that transforms digital text into authentic human handwriting across all global languages (Arabic, English, Hindi, Cyrillic, Chinese, and more).
+
+## Overview
+Text to Handwriting bridges the gap between digital typing efficiency and handwritten authenticity. Unlike basic font generators that render robotic, mathematically identical characters, this tool uses HTML5 Canvas and micro-jitter algorithms to simulate the physical imperfections of human writing (baseline drift, slight angular tilt, and ink bleed).
+
+## Core Capabilities
+- **Universal Multilingual Support**: 
+  - Full Right-to-Left (RTL) support for Arabic, Persian, Urdu, and Hebrew with automatic right-margin orientation.
+  - Ligature-safe rendering: Preserves cursive character connections in Arabic and Indic scripts without tearing letters apart.
+  - Dedicated fonts for Latin, Cyrillic (Russian), Devanagari (Hindi), and CJK (Chinese).
+- **Customizable Paper & Ink Styles**:
+  - Paper templates: Lined notebook, clean plain white, math grid, vintage parchment, and yellow legal pad.
+  - Realistic pen ink colors: Royal navy blue, black gel, ballpoint blue, grading red, and custom hex color picker.
+- **Natural Imperfection Engine**:
+  - Baseline jitter control (0 to 5px).
+  - Dynamic line height and font size adjustment.
+- **Export Options**:
+  - High-DPI print-ready PNG download.
+  - Direct browser Print to PDF formatting.
+- **Zero-Data Storage (Privacy First)**:
+  - 100% in-browser client-side execution.
+  - No text or exported files are ever sent to, processed by, or stored on remote servers.
+
+## Site Structure & Documentation
+- [Text to Handwriting Tool](https://ahmedelazabdev.github.io/Texttohandwriting/): The interactive web application and converter.
+- [About Us](https://ahmedelazabdev.github.io/Texttohandwriting/about.html): Background on the algorithmic approach, typographic ligatures, and mission.
+- [Privacy Policy](https://ahmedelazabdev.github.io/Texttohandwriting/privacy.html): Comprehensive disclosure of client-side execution and zero data retention.
+
+## Technical Stack
+- Vanilla JavaScript & HTML5 Canvas API (High-DPI 2x Retina rendering).
+- CSS3 with zero heavy external UI frameworks for sub-second Core Web Vitals.
+- Dynamic On-Demand Font Loader via Google Fonts API.
