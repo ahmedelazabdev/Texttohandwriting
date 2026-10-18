@@ -1,38 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="auto">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Text to Handwriting Converter | Free Realistic Handwritten Notes Generator</title>
-  <meta name="description" content="Convert digital text into realistic human handwriting online for free. Customize paper types, pen ink colors, letter slants, and natural imperfections. Export high-resolution PNG or PDF instantly.">
-  <meta name="keywords" content="text to handwriting, realistic handwriting generator, text to handwritten notes, convert text to handwriting, handwriting font generator, assignments handwriting maker">
+  <title>Text to Handwriting | Free Realistic Multilingual Notes Generator</title>
+  <meta name="description" content="Convert typed text to realistic human handwriting online. Full multilingual support for Arabic, English, Hindi, Cyrillic, Chinese and more. Download high-res PNG or PDF.">
+  <meta name="keywords" content="Text to Handwriting, convert text to handwriting, realistic handwriting generator, arabic handwriting generator, multilingual handwritten notes">
   <link rel="canonical" href="https://yourdomain.com/">
 
-  <!-- Open Graph / Social Meta -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://yourdomain.com/">
-  <meta property="og:title" content="Text to Handwriting Converter - Realistic Handwritten Notes Generator">
-  <meta property="og:description" content="Turn typed text into authentic-looking handwritten pages with realistic paper textures, customizable ink colors, and natural hand jitters.">
-  <meta property="og:image" content="https://yourdomain.com/og-preview.png">
+  <meta property="og:title" content="Text to Handwriting | Realistic Handwritten Notes Generator">
+  <meta property="og:description" content="Convert your text to natural handwriting in any language: Arabic, English, Hindi, Russian, and more.">
 
-  <!-- Twitter Meta -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Text to Handwriting Converter">
-  <meta name="twitter:description" content="Convert your digital notes into genuine-looking handwriting with realistic ink and paper effects.">
-
-  <!-- Google Handwriting Fonts -->
+  <!-- Multilingual Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Homemade+Apple&family=Indie+Flower&family=Kalam:wght@300;400&family=Patrick+Hand&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Aref+Ruqaa:wght@400;700&family=Caveat:wght@400;600&family=Kalam:wght@300;400&family=Ma+Shan+Zheng&family=Marck+Script&family=Patrick+Hand&family=Shadows+Into+Light&display=swap" rel="stylesheet">
 
-  <!-- Structured Data: SoftwareApplication & FAQPage -->
+  <!-- Schema Markup -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "Text to Handwriting Converter Pro",
+        "name": "Text to Handwriting",
         "operatingSystem": "All",
         "applicationCategory": "UtilitiesApplication",
         "offers": {
@@ -40,34 +34,25 @@
           "price": "0.00",
           "priceCurrency": "USD"
         },
-        "description": "A free web utility that transforms digital text into authentic human handwriting with organic baseline jitter, customizable ink colors, and realistic notebook paper templates.",
-        "url": "https://yourdomain.com/"
+        "description": "Multilingual text to realistic human handwriting generator supporting Arabic, Latin, Cyrillic, Devanagari, and CJK scripts."
       },
       {
         "@type": "FAQPage",
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "How do you make generated handwriting look 100% authentic?",
+            "name": "Does Text to Handwriting support Arabic and Right-to-Left (RTL) languages?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Authentic handwriting contains natural imperfections. Our converter introduces micro-variations to the baseline, word spacing, and letter tilt, mimicking the irregular rhythm of human hands rather than rigid computer typesets."
+              "text": "Yes, Text to Handwriting natively supports Arabic, Persian, Hebrew, and Urdu with automatic direction alignment and ligature preservation."
             }
           },
           {
             "@type": "Question",
-            "name": "Is my text data stored or sent to a server?",
+            "name": "Is my text data stored or saved on any servers?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. All text processing and rendering is executed directly in your browser using client-side HTML5 Canvas. Your text never leaves your device."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I download my handwritten notes as high-resolution images?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, you can export your handwritten notes directly as crisp, print-ready high-resolution PNG images or trigger direct printing to PDF."
+              "text": "No. All conversion runs 100% inside your browser using HTML5 Canvas. Your text never leaves your device."
             }
           }
         ]
@@ -85,19 +70,18 @@
       --text: #0f172a;
       --text-muted: #64748b;
       --border: #e2e8f0;
-      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
       --radius: 12px;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Cairo", "Amiri", sans-serif;
       background-color: var(--bg);
       color: var(--text);
       line-height: 1.6;
     }
 
-    /* Navigation */
     header {
       background: var(--surface);
       border-bottom: 1px solid var(--border);
@@ -127,17 +111,14 @@
       text-decoration: none;
       color: var(--text-muted);
       font-weight: 500;
-      transition: color 0.2s;
     }
     nav a:hover, nav a.active { color: var(--primary); }
 
-    /* Main Container */
     .app-wrapper {
       max-width: 1280px;
       margin: 2rem auto;
       padding: 0 1.5rem;
     }
-
     .hero-heading {
       text-align: center;
       margin-bottom: 2rem;
@@ -153,7 +134,6 @@
       font-size: 1.15rem;
     }
 
-    /* Workspace Layout */
     .workspace {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -164,7 +144,6 @@
       .workspace { grid-template-columns: 1fr; }
     }
 
-    /* Control Panel */
     .panel {
       background: var(--surface);
       border-radius: var(--radius);
@@ -179,14 +158,11 @@
       border-bottom: 1px solid var(--border);
       padding-bottom: 0.75rem;
     }
-    .control-group {
-      margin-bottom: 1.25rem;
-    }
+    .control-group { margin-bottom: 1.25rem; }
     label {
       display: block;
       font-size: 0.875rem;
       font-weight: 600;
-      color: var(--text);
       margin-bottom: 0.4rem;
     }
     textarea, select, input[type="range"] {
@@ -197,14 +173,11 @@
     }
     textarea {
       padding: 0.75rem;
-      resize: vertical;
-      min-height: 180px;
-      font-size: 0.95rem;
+      min-height: 160px;
+      font-size: 1rem;
+      direction: auto;
     }
-    select {
-      padding: 0.6rem;
-      background: var(--surface);
-    }
+    select { padding: 0.6rem; background: var(--surface); }
     .control-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -224,17 +197,7 @@
       border: 2px solid transparent;
       box-shadow: 0 0 0 1px var(--border);
     }
-    .swatch.active {
-      border-color: #000;
-      transform: scale(1.1);
-    }
-    .range-wrap {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    /* Action Buttons */
+    .swatch.active { border-color: #000; transform: scale(1.1); }
     .button-group {
       display: flex;
       gap: 1rem;
@@ -252,15 +215,12 @@
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      transition: background 0.2s, transform 0.1s;
     }
-    .btn:active { transform: translateY(1px); }
     .btn-primary { background: var(--primary); color: #fff; }
     .btn-primary:hover { background: var(--primary-hover); }
     .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
     .btn-outline:hover { background: var(--bg); }
 
-    /* Canvas Preview Area */
     .preview-container {
       display: flex;
       flex-direction: column;
@@ -269,10 +229,9 @@
     .canvas-scroll-wrap {
       max-width: 100%;
       overflow-x: auto;
-      background: #e5e7eb;
+      background: #e2e8f0;
       padding: 1rem;
       border-radius: var(--radius);
-      box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
     }
     canvas {
       box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.2);
@@ -280,7 +239,6 @@
       background: #ffffff;
     }
 
-    /* Long-Form Rich SEO Content Section */
     .seo-article {
       max-width: 960px;
       margin: 4rem auto;
@@ -290,68 +248,11 @@
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
     }
-    .seo-article h2 {
-      font-size: 2rem;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      color: var(--text);
-    }
-    .seo-article h3 {
-      font-size: 1.35rem;
-      margin-top: 1.5rem;
-      margin-bottom: 0.5rem;
-      color: var(--text);
-    }
-    .seo-article p {
-      margin-bottom: 1.25rem;
-      color: #334155;
-      font-size: 1.05rem;
-    }
-    .seo-article ul, .seo-article ol {
-      margin-left: 1.5rem;
-      margin-bottom: 1.5rem;
-      color: #334155;
-    }
+    .seo-article h2 { font-size: 1.8rem; margin-top: 2rem; margin-bottom: 1rem; }
+    .seo-article p { margin-bottom: 1.2rem; color: #334155; }
+    .seo-article ul { margin-left: 1.5rem; margin-bottom: 1.5rem; color: #334155; }
     .seo-article li { margin-bottom: 0.5rem; }
 
-    /* Comparison Table */
-    .comparison-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 2rem 0;
-    }
-    .comparison-table th, .comparison-table td {
-      border: 1px solid var(--border);
-      padding: 0.85rem;
-      text-align: left;
-    }
-    .comparison-table th {
-      background-color: #f1f5f9;
-      font-weight: 700;
-    }
-
-    /* FAQ Accordion */
-    .faq-block {
-      margin-top: 2rem;
-    }
-    details {
-      background: #f8fafc;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      margin-bottom: 0.75rem;
-      padding: 1rem;
-    }
-    summary {
-      font-weight: 700;
-      cursor: pointer;
-      font-size: 1.05rem;
-    }
-    details p {
-      margin-top: 0.75rem;
-      margin-bottom: 0;
-    }
-
-    /* Footer */
     footer {
       background: var(--surface);
       border-top: 1px solid var(--border);
@@ -365,11 +266,7 @@
       gap: 2rem;
       margin-bottom: 1rem;
     }
-    .footer-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-weight: 500;
-    }
+    .footer-links a { color: var(--text-muted); text-decoration: none; font-weight: 500; }
     .footer-links a:hover { color: var(--primary); }
   </style>
 </head>
@@ -377,9 +274,7 @@
 
   <header>
     <div class="nav-container">
-      <a href="index.html" class="logo">
-        ✍️ HandwrittenPro
-      </a>
+      <a href="index.html" class="logo">✍️ Text to Handwriting</a>
       <nav>
         <a href="index.html" class="active">Tool</a>
         <a href="about.html">About</a>
@@ -390,41 +285,56 @@
 
   <main class="app-wrapper">
     <div class="hero-heading">
-      <h1>Text to Handwriting Converter</h1>
-      <p>Convert your typed essays, assignments, and notes into natural, authentic handwritten pages instantly.</p>
+      <h1>Text to Handwriting</h1>
+      <p>Convert your notes and essays into realistic handwriting — supports Arabic, English, Hindi, Russian, and all world languages.</p>
     </div>
 
     <div class="workspace">
-      <!-- Input and Styling Panel -->
+      <!-- Settings Panel -->
       <div class="panel">
-        <h2 class="panel-title">1. Compose & Customize</h2>
+        <h2 class="panel-title">Settings & Customization</h2>
         
         <div class="control-group">
-          <label for="inputText">Your Text Content</label>
-          <textarea id="inputText" placeholder="Paste or type your notes here...">In an era of ubiquitous digital screens and sterile typography, the intimate texture of personal handwriting retains an unmistakable charm. Handwritten notes evoke deliberate care, cognitive reflection, and authentic presence that standard mechanical typing simply cannot reproduce.</textarea>
+          <label for="inputText">Enter Text (Type in any language)</label>
+          <textarea id="inputText" placeholder="Write or paste your text here (اكتب باللغة العربية أو أي لغة أخرى)...">تتميز الكتابة اليدوية بطابع شخصي ودفء لا يمكن للخطوط الرقمية محاكاته. يدعم هذا التطبيق تحويل أي نص بدقة وسلاسة تحاكي الخط البشري الطبيعي.
+
+Text to Handwriting supports all international languages with authentic human jitter and realistic notebook paper styles!</textarea>
         </div>
 
         <div class="control-row">
           <div class="control-group">
-            <label for="fontSelect">Handwriting Font Style</label>
+            <label for="fontSelect">Font Family (All Scripts)</label>
             <select id="fontSelect">
-              <option value="'Caveat', cursive">Caveat (Natural Cursive)</option>
-              <option value="'Homemade Apple', cursive">Homemade Apple (Signature/Calligraphy)</option>
-              <option value="'Patrick Hand', cursive" selected>Patrick Hand (Neat Casual Print)</option>
-              <option value="'Indie Flower', cursive">Indie Flower (Whimsical Flow)</option>
-              <option value="'Kalam', cursive">Kalam (Smooth Ballpoint)</option>
-              <option value="'Shadows Into Light', cursive">Shadows Into Light (Quick Doodler)</option>
+              <optgroup label="العربية (Arabic & RTL)">
+                <option value="'Aref Ruqaa', cursive" selected>Aref Ruqaa (خط الرقعة الطبيعي)</option>
+                <option value="'Amiri', serif">Amiri (خط النسخ التقليدي)</option>
+              </optgroup>
+              <optgroup label="Latin & European">
+                <option value="'Patrick Hand', cursive">Patrick Hand (Clean Casual)</option>
+                <option value="'Caveat', cursive">Caveat (Modern Cursive)</option>
+                <option value="'Shadows Into Light', cursive">Shadows Into Light</option>
+              </optgroup>
+              <optgroup label="Cyrillic (Русский)">
+                <option value="'Marck Script', cursive">Marck Script (Рукописный)</option>
+                <option value="'Caveat', cursive">Caveat (Силирица)</option>
+              </optgroup>
+              <optgroup label="Devanagari (हिन्दी)">
+                <option value="'Kalam', cursive">Kalam (हिंदी लिखावट)</option>
+              </optgroup>
+              <optgroup label="Chinese (中文)">
+                <option value="'Ma Shan Zheng', cursive">Ma Shan Zheng (毛笔书法)</option>
+              </optgroup>
             </select>
           </div>
 
           <div class="control-group">
-            <label for="paperSelect">Paper Background Style</label>
+            <label for="paperSelect">Paper Type</label>
             <select id="paperSelect">
-              <option value="lined">College Ruled (Notebook)</option>
-              <option value="plain">Blank Clean Paper</option>
-              <option value="grid">Graph / Grid Paper</option>
-              <option value="vintage">Aged Vintage Parchment</option>
-              <option value="legal">Yellow Legal Pad</option>
+              <option value="lined">Lined Notebook (مسطر)</option>
+              <option value="plain">Blank Clean Paper (أبيض)</option>
+              <option value="grid">Grid / Math Paper (مربعات)</option>
+              <option value="vintage">Vintage Parchment (ورق قديم)</option>
+              <option value="legal">Legal Yellow Pad (أصفر)</option>
             </select>
           </div>
         </div>
@@ -433,45 +343,35 @@
           <div class="control-group">
             <label>Ink Color</label>
             <div class="color-swatches">
-              <div class="swatch active" style="background: #002244;" data-color="#002244" title="Royal Navy Blue"></div>
-              <div class="swatch" style="background: #111827;" data-color="#111827" title="Gel Pen Black"></div>
+              <div class="swatch active" style="background: #002244;" data-color="#002244" title="Navy Blue"></div>
+              <div class="swatch" style="background: #111827;" data-color="#111827" title="Black Gel"></div>
               <div class="swatch" style="background: #1e3a8a;" data-color="#1e3a8a" title="Ballpoint Blue"></div>
-              <div class="swatch" style="background: #7f1d1d;" data-color="#7f1d1d" title="Grading Red"></div>
-              <input type="color" id="customColor" value="#002244" style="width:34px; height:34px; padding:0; border:none; cursor:pointer;" title="Custom Color">
+              <div class="swatch" style="background: #831843;" data-color="#831843" title="Dark Red"></div>
+              <input type="color" id="customColor" value="#002244" style="width:32px; height:32px; border:none; cursor:pointer;">
             </div>
           </div>
 
           <div class="control-group">
-            <label for="fontSize">Font Size: <span id="fontSizeVal">24</span>px</label>
-            <div class="range-wrap">
-              <input type="range" id="fontSize" min="16" max="36" value="24">
-            </div>
+            <label for="fontSize">Font Size: <span id="fontSizeVal">26</span>px</label>
+            <input type="range" id="fontSize" min="16" max="40" value="26">
           </div>
         </div>
 
         <div class="control-row">
           <div class="control-group">
-            <label for="jitterRange">Natural Human Imperfection (Jitter)</label>
-            <div class="range-wrap">
-              <input type="range" id="jitterRange" min="0" max="6" value="3" step="0.5">
-            </div>
+            <label for="jitterRange">Natural Human Jitter</label>
+            <input type="range" id="jitterRange" min="0" max="5" value="2.5" step="0.5">
           </div>
 
           <div class="control-group">
-            <label for="lineHeight">Line Spacing: <span id="lineHeightVal">38</span>px</label>
-            <div class="range-wrap">
-              <input type="range" id="lineHeight" min="28" max="60" value="38">
-            </div>
+            <label for="lineHeight">Line Spacing: <span id="lineHeightVal">40</span>px</label>
+            <input type="range" id="lineHeight" min="28" max="65" value="40">
           </div>
         </div>
 
         <div class="button-group">
-          <button class="btn btn-primary" id="downloadBtn">
-            📥 Download High-Res PNG
-          </button>
-          <button class="btn btn-outline" id="printBtn">
-            🖨️ Print / Save as PDF
-          </button>
+          <button class="btn btn-primary" id="downloadBtn">📥 Download High-Res PNG</button>
+          <button class="btn btn-outline" id="printBtn">🖨️ Print / Save PDF</button>
         </div>
       </div>
 
@@ -481,91 +381,24 @@
           <canvas id="canvas" width="800" height="1132"></canvas>
         </div>
         <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
-          Canvas Size: Standard A4 Ratio (800 x 1132px @ 2x DPI)
+          Standard A4 Canvas (Retina High-DPI Enabled)
         </p>
       </div>
     </div>
 
-    <!-- Long-Form Informational & SEO Content Engine -->
+    <!-- Long SEO Article -->
     <article class="seo-article">
-      <h2>Transforming Digital Text to Realistic Handwriting: A Complete Technical Guide</h2>
-      <p>In our current digital workplace and academic landscape, over 95% of textual communications are composed on mechanical keyboards or touchscreens. However, studies consistently verify that handwritten typography communicates a tier of authenticity, psychological warmth, and personal consideration that uniform digital typesets like Helvetica, Times New Roman, or Arial cannot convey.</p>
+      <h2>Text to Handwriting: The Complete Global Solution</h2>
+      <p>Converting typed digital characters into genuine handwriting usually fails when tools don't respect the nuances of different languages and alphabets. <strong>Text to Handwriting</strong> is engineered to render both Left-to-Right (LTR) and Right-to-Left (RTL) scripts with true organic realism.</p>
       
-      <p>Our <strong>Text to Handwriting Converter Pro</strong> bridges the gap between digital typing efficiency and handwritten sincerity. Whether you are generating mock study materials, crafting distinctive event invitations, composing personalized direct mail campaigns, or preparing handwritten assignments, this application uses client-side canvas algorithms to deliver hyper-realistic handwritten pages.</p>
-
-      <h2>Why Traditional Font Converters Fail the Realism Test</h2>
-      <p>Most basic online converters simply take standard text and apply a generic handwriting TTF font file directly to a blank white div. This instantly flags the content as fake because computers render glyphs with robotic precision: every single letter "e" is mathematically identical to every other letter "e", perfectly aligned to an unnaturally rigid baseline with perfectly consistent ink density.</p>
-
-      <p>To overcome this uncanny valley, our rendering pipeline simulates authentic human handwriting factors:</p>
+      <h2>Ligature-Safe Multi-Language Engine</h2>
+      <p>Traditional converters blindly randomize every single letter, breaking the crucial cursive connecting strokes in Arabic, Persian, Urdu, and Devanagari. Our engine preserves full typographical ligatures by grouping connected graphemes while subtly introducing realistic shifts in baseline height, rotation, and line rhythm.</p>
+      
       <ul>
-        <li><strong>Subtle Baseline Perturbation (Jitter):</strong> Every single character is rendered with micro-offsets on both the X and Y axes, replicating the physiological tremors of the human hand and finger joints.</li>
-        <li><strong>Rotational Micro-Slants:</strong> Letters fluctuate within fractions of a degree in tilt, simulating the shifting angle of a hand moving across a page.</li>
-        <li><strong>Ink Bleed & Diffusion:</strong> Canvas line rendering applies mild sub-pixel shadow diffusion to reproduce the organic capillary absorption of wet ink on paper fibers.</li>
-        <li><strong>Dynamic Rule-Line Alignment:</strong> The tool automatically anchors letter ascenders and descenders relative to realistic notebook margins and rule lines.</li>
+        <li><strong>Arabic & RTL Adaptation:</strong> Automatic right-hand margin flipping and baseline alignment.</li>
+        <li><strong>CJK & Cyrillic Support:</strong> High-precision font support for Russian, Chinese, Hindi, and Greek.</li>
+        <li><strong>Zero Data Tracking:</strong> All conversion runs locally in your web browser. No text is ever uploaded to our servers.</li>
       </ul>
-
-      <h2>Feature Comparison: How We Outperform Generic Converters</h2>
-      <table class="comparison-table">
-        <thead>
-          <tr>
-            <th>Feature</th>
-            <th>Generic Competitors</th>
-            <th>Text to Handwriting Pro</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Data Privacy & Security</strong></td>
-            <td>Uploads text to unknown remote databases</td>
-            <td>100% Client-Side In-Browser Execution</td>
-          </tr>
-          <tr>
-            <td><strong>Baseline Randomization</strong></td>
-            <td>Zero (Flat horizontal alignment)</td>
-            <td>Dynamic human-jitter simulation</td>
-          </tr>
-          <tr>
-            <td><strong>Paper Backgrounds</strong></td>
-            <td>Static lined notebook paper only</td>
-            <td>Ruled, Blank, Graph, Parchment & Legal Pads</td>
-          </tr>
-          <tr>
-            <td><strong>Export Quality</strong></td>
-            <td>Low-res compressed 72 DPI artifacts</td>
-            <td>High-DPI Retina Rendering & Print-Ready PDF</td>
-          </tr>
-          <tr>
-            <td><strong>Intrusive Advertisements</strong></td>
-            <td>Heavy banners & redirect pop-ups</td>
-            <td>Clean, zero-distraction workspace</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2>Step-by-Step Instructions: Creating Your Handwritten Document</h2>
-      <ol>
-        <li><strong>Type or Paste:</strong> Input your textual content directly into the composition field. Our engine automatically computes intelligent line breaking and word-wrapping.</li>
-        <li><strong>Select Pen & Typography:</strong> Choose from 6 curated Google Handwriting fonts and adjust font size to match your preferred pen style.</li>
-        <li><strong>Pick Paper & Ink:</strong> Select from College Ruled notebook sheets, yellow legal pads, or clean parchment. Choose from realistic fountain pen royal blue, ballpoint black, or red grading ink.</li>
-        <li><strong>Calibrate Realism:</strong> Adjust the <em>Natural Imperfection (Jitter)</em> slider to dial in subtle or heavy human variance.</li>
-        <li><strong>Export:</strong> Download your output as an ultra-high-resolution PNG image or directly trigger your browser's Print-to-PDF dialogue.</li>
-      </ol>
-
-      <div class="faq-block">
-        <h2>Frequently Asked Questions</h2>
-        <details>
-          <summary>Can instructors or software detect that this handwriting was generated?</summary>
-          <p>Our generator produces high-fidelity results with variable baselines and paper textures. However, when submitting academic assignments, always review and abide by your institution's specific honor code and submission guidelines regarding digitally assisted typesetting.</p>
-        </details>
-        <details>
-          <summary>Does this tool work on mobile devices and tablets?</summary>
-          <p>Yes. The entire user interface and Canvas rendering pipeline are built to be responsive across desktop monitors, iPads, Android tablets, and mobile smartphones.</p>
-        </details>
-        <details>
-          <summary>Can I convert multi-page documents?</summary>
-          <p>The canvas currently renders a standard full-length A4 document. For lengthy multi-page documents, you can process your sections block by block or download separate sheets sequentially.</p>
-        </details>
-      </div>
     </article>
   </main>
 
@@ -576,12 +409,11 @@
       <a href="privacy.html">Privacy Policy</a>
     </div>
     <p style="color: var(--text-muted); font-size: 0.9rem;">
-      &copy; <span id="year"></span> Text to Handwriting Pro. All rights reserved. Zero server tracking.
+      &copy; <span id="year"></span> Text to Handwriting. All rights reserved.
     </p>
   </footer>
 
   <script>
-    // State management
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
     const inputText = document.getElementById('inputText');
@@ -600,14 +432,13 @@
     let currentInkColor = '#002244';
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Canvas Constants
     const CANVAS_WIDTH = 800;
     const CANVAS_HEIGHT = 1132;
-    const MARGIN_LEFT = 90;
-    const MARGIN_RIGHT = 50;
+    const MARGIN_LEFT = 75;
+    const MARGIN_RIGHT = 75;
     const MARGIN_TOP = 110;
 
-    // Handle high DPI
+    // Retina DPI Setup
     const dpr = window.devicePixelRatio || 1;
     canvas.width = CANVAS_WIDTH * dpr;
     canvas.height = CANVAS_HEIGHT * dpr;
@@ -615,26 +446,192 @@
     canvas.style.height = CANVAS_HEIGHT + 'px';
     ctx.scale(dpr, dpr);
 
-    // Event Listeners for UI controls
+    // RTL Detection Regex (Arabic, Hebrew, Persian, Urdu, etc.)
+    function isRTLText(text) {
+      const rtlRegex = /[\u0591-\u07FF\uFB1D-\uFDFD\uFE70-\uFEFC]/;
+      return rtlRegex.test(text);
+    }
+
+    // Pseudo-random function for repeatable organic jitter
+    function pseudoRandom(seed) {
+      const x = Math.sin(seed++) * 10000;
+      return x - Math.floor(x);
+    }
+
+    // Draw Paper Styles
+    function drawPaper(style, isRTL) {
+      ctx.save();
+      if (style === 'plain') {
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+      } else if (style === 'vintage') {
+        ctx.fillStyle = '#fbf5e6';
+        ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+      } else if (style === 'legal') {
+        ctx.fillStyle = '#fef9c3';
+        ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+        ctx.strokeStyle = '#f87171';
+        ctx.lineWidth = 1.5;
+        const marginX = isRTL ? (CANVAS_WIDTH - MARGIN_RIGHT + 15) : (MARGIN_LEFT - 15);
+        ctx.beginPath();
+        ctx.moveTo(marginX, 0);
+        ctx.lineTo(marginX, CANVAS_HEIGHT);
+        ctx.stroke();
+      } else if (style === 'grid') {
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+        ctx.strokeStyle = '#e2e8f0';
+        ctx.lineWidth = 1;
+        const step = 25;
+        for (let x = 0; x < CANVAS_WIDTH; x += step) {
+          ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, CANVAS_HEIGHT); ctx.stroke();
+        }
+        for (let y = 0; y < CANVAS_HEIGHT; y += step) {
+          ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(CANVAS_WIDTH, y); ctx.stroke();
+        }
+      } else {
+        // Standard lined notebook
+        ctx.fillStyle = '#fafafa';
+        ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+        const lHeight = parseInt(lineHeight.value, 10);
+        ctx.strokeStyle = '#cbd5e1';
+        ctx.lineWidth = 1;
+        for (let y = MARGIN_TOP; y < CANVAS_HEIGHT - 40; y += lHeight) {
+          ctx.beginPath();
+          ctx.moveTo(35, y);
+          ctx.lineTo(CANVAS_WIDTH - 35, y);
+          ctx.stroke();
+        }
+
+        // Margin Line (Flips sides for RTL vs LTR!)
+        ctx.strokeStyle = '#fca5a5';
+        ctx.lineWidth = 1.5;
+        const marginX = isRTL ? (CANVAS_WIDTH - MARGIN_RIGHT + 15) : (MARGIN_LEFT - 15);
+        ctx.beginPath();
+        ctx.moveTo(marginX, 0);
+        ctx.lineTo(marginX, CANVAS_HEIGHT);
+        ctx.stroke();
+      }
+      ctx.restore();
+    }
+
+    // Core Multilingual Rendering Pipeline
+    function renderCanvas() {
+      const text = inputText.value;
+      const hasRTL = isRTLText(text);
+
+      ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+      drawPaper(paperSelect.value, hasRTL);
+
+      const size = parseInt(fontSize.value, 10);
+      const lHeight = parseInt(lineHeight.value, 10);
+      const jitterAmount = parseFloat(jitterRange.value);
+      const chosenFont = fontSelect.value;
+
+      ctx.font = `${size}px ${chosenFont}`;
+      ctx.fillStyle = currentInkColor;
+      ctx.textBaseline = 'alphabetic';
+
+      // Ink bleed effect
+      ctx.shadowColor = currentInkColor;
+      ctx.shadowBlur = 0.35;
+
+      const maxWidth = CANVAS_WIDTH - MARGIN_LEFT - MARGIN_RIGHT;
+      const paragraphs = text.split('\n');
+
+      let currentY = MARGIN_TOP;
+      let seed = 100;
+
+      for (let p = 0; p < paragraphs.length; p++) {
+        const paragraph = paragraphs[p];
+        const pIsRTL = isRTLText(paragraph);
+        const words = paragraph.split(' ');
+        let currentLineWords = [];
+
+        for (let w = 0; w < words.length; w++) {
+          const testLine = [...currentLineWords, words[w]].join(' ');
+          const testWidth = ctx.measureText(testLine).width;
+
+          if (testWidth > maxWidth && currentLineWords.length > 0) {
+            drawLine(currentLineWords, currentY, pIsRTL, jitterAmount, seed);
+            seed += currentLineWords.length * 5;
+            currentLineWords = [words[w]];
+            currentY += lHeight;
+            if (currentY > CANVAS_HEIGHT - 40) break;
+          } else {
+            currentLineWords.push(words[w]);
+          }
+        }
+
+        if (currentLineWords.length > 0 && currentY <= CANVAS_HEIGHT - 40) {
+          drawLine(currentLineWords, currentY, pIsRTL, jitterAmount, seed);
+          seed += currentLineWords.length * 5;
+          currentY += lHeight;
+        }
+
+        if (currentY > CANVAS_HEIGHT - 40) break;
+      }
+    }
+
+    // Word-Safe Draw (Preserves Arabic & Indic Ligatures)
+    function drawLine(words, y, isRTL, jitter, seed) {
+      ctx.save();
+      ctx.direction = isRTL ? 'rtl' : 'ltr';
+
+      if (isRTL) {
+        let x = CANVAS_WIDTH - MARGIN_RIGHT;
+        for (let i = 0; i < words.length; i++) {
+          const word = words[i];
+          const wordWidth = ctx.measureText(word + ' ').width;
+          const yJitter = (pseudoRandom(seed + i * 4) - 0.5) * jitter;
+          const angle = (pseudoRandom(seed + i * 6) - 0.5) * 0.03 * (jitter / 2.5);
+
+          ctx.save();
+          ctx.translate(x, y + yJitter);
+          ctx.rotate(angle);
+          ctx.textAlign = 'right';
+          ctx.fillText(word, 0, 0);
+          ctx.restore();
+
+          x -= wordWidth;
+        }
+      } else {
+        let x = MARGIN_LEFT;
+        for (let i = 0; i < words.length; i++) {
+          const word = words[i];
+          const wordWidth = ctx.measureText(word + ' ').width;
+          const yJitter = (pseudoRandom(seed + i * 4) - 0.5) * jitter;
+          const angle = (pseudoRandom(seed + i * 6) - 0.5) * 0.03 * (jitter / 2.5);
+
+          ctx.save();
+          ctx.translate(x, y + yJitter);
+          ctx.rotate(angle);
+          ctx.textAlign = 'left';
+          ctx.fillText(word, 0, 0);
+          ctx.restore();
+
+          x += wordWidth;
+        }
+      }
+      ctx.restore();
+    }
+
+    // Listeners
     inputText.addEventListener('input', renderCanvas);
     fontSelect.addEventListener('change', () => {
-      document.fonts.load(`16px ${fontSelect.value}`).then(renderCanvas);
+      document.fonts.load(`18px ${fontSelect.value}`).then(renderCanvas);
     });
     paperSelect.addEventListener('change', renderCanvas);
-    
     fontSize.addEventListener('input', (e) => {
       fontSizeVal.textContent = e.target.value;
       renderCanvas();
     });
-
     lineHeight.addEventListener('input', (e) => {
       lineHeightVal.textContent = e.target.value;
       renderCanvas();
     });
-
     jitterRange.addEventListener('input', renderCanvas);
 
-    // Ink Color Selection
     swatches.forEach(swatch => {
       swatch.addEventListener('click', () => {
         swatches.forEach(s => s.classList.remove('active'));
@@ -651,147 +648,6 @@
       renderCanvas();
     });
 
-    // Draw Paper Backgrounds
-    function drawPaper(style) {
-      ctx.save();
-      if (style === 'plain') {
-        ctx.fillStyle = '#ffffff';
-        ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-      } else if (style === 'vintage') {
-        ctx.fillStyle = '#fef6e4';
-        ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-      } else if (style === 'legal') {
-        ctx.fillStyle = '#fef9c3';
-        ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-        // Vertical red margin rule
-        ctx.strokeStyle = '#f87171';
-        ctx.lineWidth = 1.5;
-        ctx.beginPath();
-        ctx.moveTo(MARGIN_LEFT - 15, 0);
-        ctx.lineTo(MARGIN_LEFT - 15, CANVAS_HEIGHT);
-        ctx.stroke();
-      } else if (style === 'grid') {
-        ctx.fillStyle = '#ffffff';
-        ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-        ctx.strokeStyle = '#e2e8f0';
-        ctx.lineWidth = 1;
-        const step = 25;
-        for (let x = 0; x < CANVAS_WIDTH; x += step) {
-          ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, CANVAS_HEIGHT); ctx.stroke();
-        }
-        for (let y = 0; y < CANVAS_HEIGHT; y += step) {
-          ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(CANVAS_WIDTH, y); ctx.stroke();
-        }
-      } else {
-        // 'lined' notebook default
-        ctx.fillStyle = '#fafafa';
-        ctx.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-        
-        const lHeight = parseInt(lineHeight.value, 10);
-        ctx.strokeStyle = '#cbd5e1';
-        ctx.lineWidth = 1;
-        for (let y = MARGIN_TOP; y < CANVAS_HEIGHT - 40; y += lHeight) {
-          ctx.beginPath();
-          ctx.moveTo(30, y);
-          ctx.lineTo(CANVAS_WIDTH - 30, y);
-          ctx.stroke();
-        }
-
-        // Red vertical margin line
-        ctx.strokeStyle = '#fca5a5';
-        ctx.lineWidth = 1.5;
-        ctx.beginPath();
-        ctx.moveTo(MARGIN_LEFT - 15, 0);
-        ctx.lineTo(MARGIN_LEFT - 15, CANVAS_HEIGHT);
-        ctx.stroke();
-      }
-      ctx.restore();
-    }
-
-    // Pseudorandom seed generator for reproducible subtle jitter
-    function pseudoRandom(seed) {
-      const x = Math.sin(seed++) * 10000;
-      return x - Math.floor(x);
-    }
-
-    // Render Canvas with Handwriting Engine
-    function renderCanvas() {
-      ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-      drawPaper(paperSelect.value);
-
-      const text = inputText.value;
-      const size = parseInt(fontSize.value, 10);
-      const lHeight = parseInt(lineHeight.value, 10);
-      const jitterAmount = parseFloat(jitterRange.value);
-      const chosenFont = fontSelect.value;
-
-      ctx.font = `${size}px ${chosenFont}`;
-      ctx.fillStyle = currentInkColor;
-      ctx.textBaseline = 'alphabetic';
-
-      // Subtle ink bleed simulation
-      ctx.shadowColor = currentInkColor;
-      ctx.shadowBlur = 0.4;
-
-      const maxWidth = CANVAS_WIDTH - MARGIN_LEFT - MARGIN_RIGHT;
-      const paragraphs = text.split('\n');
-
-      let currentY = MARGIN_TOP;
-      let seedCounter = 42;
-
-      for (let p = 0; p < paragraphs.length; p++) {
-        const words = paragraphs[p].split(' ');
-        let currentLine = '';
-        let currentX = MARGIN_LEFT;
-
-        for (let w = 0; w < words.length; w++) {
-          const testLine = currentLine + words[w] + ' ';
-          const testWidth = ctx.measureText(testLine).width;
-
-          if (testWidth > maxWidth && currentLine !== '') {
-            // Draw line character by character with micro-jitter
-            drawJitteredLine(currentLine, MARGIN_LEFT, currentY, jitterAmount, seedCounter);
-            seedCounter += currentLine.length;
-            currentLine = words[w] + ' ';
-            currentY += lHeight;
-            if (currentY > CANVAS_HEIGHT - 40) break;
-          } else {
-            currentLine = testLine;
-          }
-        }
-
-        if (currentLine.trim() !== '') {
-          drawJitteredLine(currentLine, MARGIN_LEFT, currentY, jitterAmount, seedCounter);
-          seedCounter += currentLine.length;
-          currentY += lHeight;
-        }
-
-        if (currentY > CANVAS_HEIGHT - 40) break;
-      }
-    }
-
-    function drawJitteredLine(line, startX, baseY, jitter, seed) {
-      let x = startX;
-      for (let i = 0; i < line.length; i++) {
-        const char = line[i];
-        const r1 = pseudoRandom(seed + i * 3) - 0.5;
-        const r2 = pseudoRandom(seed + i * 5) - 0.5;
-        const rAngle = (pseudoRandom(seed + i * 7) - 0.5) * 0.05 * (jitter / 3);
-
-        const yOffset = r1 * jitter;
-        const xOffset = r2 * (jitter * 0.5);
-
-        ctx.save();
-        ctx.translate(x + xOffset, baseY + yOffset);
-        ctx.rotate(rAngle);
-        ctx.fillText(char, 0, 0);
-        ctx.restore();
-
-        x += ctx.measureText(char).width;
-      }
-    }
-
-    // Download PNG
     downloadBtn.addEventListener('click', () => {
       const link = document.createElement('a');
       link.download = `handwritten-document-${Date.now()}.png`;
@@ -799,33 +655,19 @@
       link.click();
     });
 
-    // Print / PDF Direct Dialogue
     printBtn.addEventListener('click', () => {
       const dataUrl = canvas.toDataURL('image/png');
       const win = window.open('', '_blank');
       win.document.write(`
-        <!DOCTYPE html>
         <html>
-        <head>
-          <title>Print Handwritten Document</title>
-          <style>
-            @page { margin: 0; size: auto; }
-            body { margin: 0; display: flex; justify-content: center; align-items: center; }
-            img { width: 100%; max-width: 800px; height: auto; }
-          </style>
-        </head>
-        <body>
-          <img src="${dataUrl}" onload="window.print(); window.close();" />
-        </body>
+        <head><title>Text to Handwriting - Print</title><style>@page{margin:0;}body{margin:0;display:flex;justify-content:center;}img{width:100%;max-width:800px;}</style></head>
+        <body><img src="${dataUrl}" onload="window.print();window.close();"/></body>
         </html>
       `);
       win.document.close();
     });
 
-    // Wait for fonts to initialize before first canvas render
-    document.fonts.ready.then(() => {
-      renderCanvas();
-    });
+    document.fonts.ready.then(renderCanvas);
   </script>
 </body>
 </html>
