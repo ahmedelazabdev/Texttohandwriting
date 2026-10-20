@@ -420,6 +420,7 @@
       color: var(--text-muted);
       display: flex;
       justify-content: space-between;
+      cursor: pointer;
     }
 
     input[type="range"] {
@@ -840,49 +841,49 @@
         <!-- Left: Text Entry & Param Sliders -->
         <div class="editor-pane">
           <div class="input-label-row">
-            <span>Enter Your Text Below:</span>
-            <span style="font-size:0.8rem; color:var(--primary); cursor:pointer;" onclick="resetSampleText()">Load Multi-Script Sample</span>
+            <label for="source-text" style="cursor:pointer;">Enter Your Text Below:</label>
+            <button type="button" style="background:none; border:none; font-size:0.8rem; font-weight:700; color:var(--primary); cursor:pointer; font-family:inherit;" onclick="resetSampleText()">Load Multi-Script Sample</button>
           </div>
 
           <textarea id="source-text" oninput="drawHandwriting()" placeholder="Type or paste your text here in any language (English, Arabic, Hindi, Russian)..." aria-label="Text to convert to handwriting"></textarea>
 
-          <!-- Realism Sliders -->
+          <!-- Realism Sliders with Semantic Accessible Labels -->
           <div class="sliders-panel">
             <div class="slider-item">
-              <span class="slider-label">
+              <label class="slider-label" for="slider-font-size">
                 <span>Font Size</span>
                 <span id="lbl-font-size">24px</span>
-              </span>
-              <input type="range" id="slider-font-size" min="16" max="34" value="24" oninput="updateSliders()">
+              </label>
+              <input type="range" id="slider-font-size" min="16" max="34" value="24" oninput="updateSliders()" aria-label="Font Size">
             </div>
 
             <div class="slider-item">
-              <span class="slider-label">
+              <label class="slider-label" for="slider-line-height">
                 <span>Line Height</span>
                 <span id="lbl-line-height">38px</span>
-              </span>
-              <input type="range" id="slider-line-height" min="26" max="52" value="38" oninput="updateSliders()">
+              </label>
+              <input type="range" id="slider-line-height" min="26" max="52" value="38" oninput="updateSliders()" aria-label="Line Height">
             </div>
 
             <div class="slider-item">
-              <span class="slider-label">
+              <label class="slider-label" for="slider-margin">
                 <span>Side Margin</span>
                 <span id="lbl-margin">60px</span>
-              </span>
-              <input type="range" id="slider-margin" min="30" max="110" value="60" oninput="updateSliders()">
+              </label>
+              <input type="range" id="slider-margin" min="30" max="110" value="60" oninput="updateSliders()" aria-label="Side Margin">
             </div>
 
             <div class="slider-item">
-              <span class="slider-label">
+              <label class="slider-label" for="slider-top">
                 <span>Top Offset</span>
                 <span id="lbl-top">80px</span>
-              </span>
-              <input type="range" id="slider-top" min="50" max="140" value="80" oninput="updateSliders()">
+              </label>
+              <input type="range" id="slider-top" min="50" max="140" value="80" oninput="updateSliders()" aria-label="Top Offset">
             </div>
           </div>
 
-          <label class="checkbox-item">
-            <input type="checkbox" id="chk-jitter" checked onchange="drawHandwriting()">
+          <label class="checkbox-item" for="chk-jitter">
+            <input type="checkbox" id="chk-jitter" checked onchange="drawHandwriting()" aria-label="Simulate Human Imperfections">
             <span>Simulate Human Imperfections (Baseline & Angle Wobble)</span>
           </label>
         </div>
@@ -890,7 +891,7 @@
         <!-- Right: Live Canvas Preview -->
         <div class="preview-pane">
           <div class="canvas-card-holder">
-            <canvas id="handwriting-canvas" width="800" height="1130"></canvas>
+            <canvas id="handwriting-canvas" width="800" height="1130" aria-label="Live handwritten note rendering preview"></canvas>
           </div>
         </div>
       </div>
@@ -1080,7 +1081,6 @@
     }
 
     function isRTL(text) {
-      // Regex checking for Arabic, Hebrew, Persian, Urdu unicode ranges
       const rtlRegex = /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF\u0590-\u05FF]/;
       return rtlRegex.test(text);
     }
@@ -1097,16 +1097,14 @@
       const w = canvas.width;
       const h = canvas.height;
 
-      // Base Paper Background Color
       if (paperType === 'legal') {
-        ctx.fillStyle = '#fef9c3'; // Warm legal pad yellow
+        ctx.fillStyle = '#fef9c3';
       } else {
         ctx.fillStyle = '#ffffff';
       }
       ctx.fillRect(0, 0, w, h);
 
       if (paperType === 'lined' || paperType === 'legal') {
-        // Horizontal Rules
         ctx.strokeStyle = paperType === 'legal' ? '#fde047' : '#e0e7ff';
         ctx.lineWidth = 1;
         const startY = parseInt(document.getElementById('slider-top').value, 10);
@@ -1118,23 +1116,19 @@
           ctx.stroke();
         }
 
-        // Vertical Margin Line
-        ctx.strokeStyle = '#fca5a5'; // Soft pink/red margin rule
+        ctx.strokeStyle = '#fca5a5';
         ctx.lineWidth = 1.5;
         ctx.beginPath();
         if (isTextRTL) {
-          // Put margin rule on the right for Arabic/RTL
           ctx.moveTo(w - sideMargin + 15, 0);
           ctx.lineTo(w - sideMargin + 15, h);
         } else {
-          // Put margin rule on left for LTR
           ctx.moveTo(sideMargin - 15, 0);
           ctx.lineTo(sideMargin - 15, h);
         }
         ctx.stroke();
 
       } else if (paperType === 'grid') {
-        // Math / Graph Paper Grid
         ctx.strokeStyle = '#e2e8f0';
         ctx.lineWidth = 0.8;
         const gridSize = 24;
@@ -1167,10 +1161,8 @@
 
       const hasRTL = isRTL(text);
 
-      // Render Paper
       drawPaper(paperType, lineHeight, sideMargin, hasRTL);
 
-      // Setup Font & Context
       ctx.font = `${fontSize}px ${fontChoice}`;
       ctx.fillStyle = inkColor;
 
@@ -1191,7 +1183,7 @@
         const words = para.split(' ');
         let line = '';
 
-        words.forEach((word, index) => {
+        words.forEach((word) => {
           const testLine = line + (line ? ' ' : '') + word;
           const metrics = ctx.measureText(testLine);
 
@@ -1212,14 +1204,13 @@
     }
 
     function renderLine(lineText, yPos, sideMargin, isRTLText, withJitter) {
-      if (yPos > canvas.height - 30) return; // Stop if exceeding page height
+      if (yPos > canvas.height - 30) return;
 
       ctx.save();
       const startX = isRTLText ? canvas.width - sideMargin : sideMargin;
       ctx.textAlign = isRTLText ? 'right' : 'left';
 
       if (withJitter) {
-        // Natural human micro-wobble
         const rotJitter = (Math.random() - 0.5) * 0.008;
         const yJitter = (Math.random() - 0.5) * 1.5;
         ctx.translate(startX, yPos + yJitter);
@@ -1253,7 +1244,6 @@
       }, 3000);
     }
 
-    // Handle document fonts loaded event for initial paint
     if (document.fonts) {
       document.fonts.ready.then(() => {
         drawHandwriting();
